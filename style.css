@@ -1,0 +1,266 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* BODY */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #fdf6f0;
+    color: #3e2f2f;
+}
+
+/* ================= NAVBAR ================= */
+header {
+    background: #a0522d;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 40px;
+}
+
+.logo {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #fdf6f0;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 24px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #f5e0c5;
+    font-weight: 500;
+    position: relative;
+}
+
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background: #deb887;
+    left: 0;
+    bottom: -4px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
+}
+
+.nav-links a.active {
+    color: #ff7a00;
+    font-weight: bold;
+}
+
+/* ================= SECTIONS ================= */
+.section {
+    max-width: 1100px;
+    margin: auto;
+    padding: 80px 40px;
+}
+
+/* ================= HERO ================= */
+.hero {
+    text-align: center;
+    background: linear-gradient(135deg, #deb887, #a0522d);
+    border-radius: 0 0 40px 40px;
+    color: #fdf6f0;
+}
+
+.hero h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    max-width: 700px;
+    margin: auto;
+    font-size: 1.1rem;
+}
+
+/* ================= CARDS ================= */
+.card {
+    background: #ffe7d2;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    margin-bottom: 30px;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+}
+
+.card h3 {
+    color: #a0522d;
+    margin-bottom: 10px;
+}
+
+/* ================= CRISP-DM PHASE CARDS ================= */
+.phases-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.phase-card {
+    background: #fdf6f0;
+    border-left: 6px solid #a0522d;
+    padding: 20px 22px;
+    border-radius: 16px;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+
+    /* Animation */
+    opacity: 0;
+    animation: phaseFadeUp 0.9s ease forwards;
+}
+
+.phase-card h4 {
+    color: #a0522d;
+    margin-bottom: 8px;
+    font-size: 1.05rem;
+}
+
+.phase-card p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.phase-card:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.15);
+}
+
+/* Animation keyframes */
+@keyframes phaseFadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(35px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Staggered animation */
+.phase-card:nth-child(1) { animation-delay: 0.1s; }
+.phase-card:nth-child(2) { animation-delay: 0.2s; }
+.phase-card:nth-child(3) { animation-delay: 0.3s; }
+.phase-card:nth-child(4) { animation-delay: 0.4s; }
+.phase-card:nth-child(5) { animation-delay: 0.5s; }
+.phase-card:nth-child(6) { animation-delay: 0.6s; }
+
+/* ================= PLACEHOLDERS ================= */
+.placeholder {
+    background: #ffe7d2;
+    border: 2px dashed #deb887;
+    padding: 60px;
+    border-radius: 20px;
+    text-align: center;
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+
+.placeholder img,
+.img {
+    width: 800px;
+    height: auto;
+    display: block;
+    margin: 10px auto;
+}
+
+/* ================= PROFILE ================= */
+.profile-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 3px solid #2c3e50;
+    display: block;
+    margin: 15px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.author-text {
+    display: block;
+    margin: 15px auto;
+    text-align: center;
+}
+
+/* ================= TABLES ================= */
+.table-container {
+    overflow-x: auto;
+    margin-bottom: 30px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fde8cc;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+th,
+td {
+    padding: 12px 15px;
+    border: 1px solid #deb887;
+    text-align: left;
+}
+
+th {
+    background: #deb887;
+    color: #3e2f2f;
+}
+
+/* ================= FOOTER ================= */
+footer {
+    background: #a0522d;
+    text-align: center;
+    padding: 20px;
+    color: #fdf6f0;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .hero h2 {
+        font-size: 2.2rem;
+    }
+
+    table,
+    th,
+    td {
+        font-size: 14px;
+    }
+
+    .phase-card {
+        padding: 18px;
+    }
+}
